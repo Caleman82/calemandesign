@@ -1,731 +1,1360 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Creativa Net | Webs profesionales</title>
-
-<meta name="description" content="Creamos webs profesionales, rápidas y accesibles para negocios que quieren crecer online. Un proyecto de CalemanDesign.">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#070709;
-    color:#ffffff;
-    line-height:1.5;
-}
-
-:root{
-    --neon:#c7ff00;
-    --violet:#8b5cf6;
-    --black:#070709;
-    --dark:#101014;
-    --gray:#a4a4ad;
-    --white:#ffffff;
-}
-
-/* NAV */
-
-nav{
-    width:100%;
-    padding:25px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:absolute;
-    z-index:10;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:900;
-    letter-spacing:-1px;
-}
-
-.logo span{
-    color:var(--neon);
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:28px;
-    font-size:14px;
-}
-
-.nav-btn{
-    border:1px solid var(--neon);
-    padding:11px 20px;
-    border-radius:50px;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:130px 7% 80px;
-    position:relative;
-    overflow:hidden;
-}
-
-.glow{
-    position:absolute;
-    width:600px;
-    height:600px;
-    background:var(--violet);
-    filter:blur(180px);
-    opacity:.20;
-    right:-180px;
-    top:50px;
-    border-radius:50%;
-}
-
-.glow2{
-    position:absolute;
-    width:400px;
-    height:400px;
-    background:var(--neon);
-    filter:blur(170px);
-    opacity:.08;
-    left:-150px;
-    bottom:-100px;
-}
-
-.hero-content{
-    max-width:1000px;
-    position:relative;
-    z-index:2;
-}
-
-.tag{
-    display:inline-block;
-    color:var(--neon);
-    border:1px solid #34343b;
-    padding:8px 15px;
-    border-radius:30px;
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:30px;
-}
-
-.hero h1{
-    font-size:clamp(60px,9vw,135px);
-    line-height:.88;
-    letter-spacing:-7px;
-    font-weight:900;
-    max-width:1200px;
-}
-
-.hero h1 span{
-    color:var(--neon);
-}
-
-.hero-text{
-    max-width:650px;
-    margin-top:35px;
-    font-size:20px;
-    color:#b9b9c1;
-}
-
-.buttons{
-    display:flex;
-    gap:15px;
-    margin-top:40px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-block;
-    padding:17px 28px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:var(--neon);
-    color:#080808;
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 40px rgba(199,255,0,.25);
-}
-
-.btn-secondary{
-    border:1px solid #38383f;
-    color:white;
-}
-
-.by{
-    margin-top:60px;
-    color:#66666f;
-    font-size:13px;
-    letter-spacing:1px;
-}
-
-.by strong{
-    color:white;
-}
-
-/* MARQUEE */
-
-.marquee{
-    background:var(--neon);
-    color:#080808;
-    padding:16px 0;
-    overflow:hidden;
-    white-space:nowrap;
-    font-weight:900;
-    text-transform:uppercase;
-    font-size:15px;
-}
-
-.marquee div{
-    display:inline-block;
-    animation:move 22s linear infinite;
-}
-
-@keyframes move{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
-}
-
-/* GENERAL */
-
-section{
-    padding:110px 7%;
-}
-
-.eyebrow{
-    color:var(--neon);
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.section-title{
-    font-size:clamp(42px,6vw,78px);
-    line-height:.95;
-    letter-spacing:-4px;
-    margin-top:18px;
-    max-width:850px;
-}
-
-/* BENEFICIOS */
-
-.intro{
-    background:#0d0d11;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    margin-top:70px;
-    background:#292930;
-    border:1px solid #292930;
-}
-
-.card{
-    background:#0d0d11;
-    padding:45px 35px;
-    min-height:260px;
-    transition:.3s;
-}
-
-.card:hover{
-    background:#15151b;
-}
-
-.number{
-    color:var(--neon);
-    font-size:13px;
-    margin-bottom:50px;
-}
-
-.card h3{
-    font-size:25px;
-    margin-bottom:12px;
-}
-
-.card p{
-    color:#9999a3;
-    font-size:15px;
-}
-
-/* COMO FUNCIONA */
-
-.steps{
-    background:#f2f2ed;
-    color:#0b0b0d;
-}
-
-.steps .eyebrow{
-    color:#6335e5;
-}
-
-.steps-container{
-    margin-top:65px;
-}
-
-.step{
-    display:grid;
-    grid-template-columns:100px 1fr;
-    padding:35px 0;
-    border-top:1px solid #c9c9c5;
-}
-
-.step-number{
-    font-size:14px;
-    font-weight:bold;
-}
-
-.step h3{
-    font-size:clamp(28px,4vw,48px);
-    letter-spacing:-2px;
-}
-
-.step p{
-    color:#666;
-    max-width:600px;
-    margin-top:8px;
-}
-
-/* PLAN */
-
-.plan-section{
-    position:relative;
-    overflow:hidden;
-}
-
-.plan{
-    margin-top:65px;
-    max-width:900px;
-    border:1px solid #33333b;
-    padding:50px;
-    position:relative;
-    background:linear-gradient(145deg,#101014,#09090b);
-}
-
-.plan-label{
-    color:var(--neon);
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.plan h3{
-    font-size:50px;
-    margin-top:10px;
-}
-
-.plan-subtitle{
-    color:#9999a3;
-    margin-top:10px;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px 40px;
-    margin:40px 0;
-}
-
-.feature{
-    border-top:1px solid #292930;
-    padding-top:15px;
-    color:#c6c6cc;
-}
-
-.feature::before{
-    content:"↗";
-    color:var(--neon);
-    margin-right:10px;
-}
-
-.small{
-    color:#676770;
-    font-size:12px;
-    margin-top:25px;
-}
-
-/* CTA */
-
-.cta{
-    background:var(--neon);
-    color:#080808;
-}
-
-.cta h2{
-    font-size:clamp(55px,8vw,110px);
-    line-height:.88;
-    letter-spacing:-6px;
-    max-width:1000px;
-}
-
-.cta p{
-    max-width:550px;
-    margin-top:30px;
-    font-size:18px;
-}
-
-.cta .btn{
-    background:#080808;
-    color:white;
-    margin-top:30px;
-}
-
-/* FOOTER */
-
-footer{
-    padding:50px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    background:#070709;
-}
-
-.footer-logo{
-    font-size:28px;
-    font-weight:900;
-}
-
-.footer-logo span{
-    color:var(--neon);
-}
-
-footer p{
-    color:#686870;
-    font-size:12px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    nav .links{
-        display:none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CalemanDesign | Marketing Digital, Publicidad y Diseño Web</title>
+  <meta name="description" content="Agencia de marketing digital, publicidad, diseño y desarrollo web. Estrategia, Meta Ads, Google Ads, contenidos y sitios web profesionales.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --black:#050505;
+      --black2:#0b0b0d;
+      --card:#101014;
+      --white:#ffffff;
+      --soft:#b9b9c3;
+
+      --pink:#ff1c8e;
+      --pink2:#ff4eae;
+      --violet:#6d25ff;
+      --purple:#9228ff;
+      --lilac:#c28cff;
+      --yellow:#ffd900;
+
+      --line:rgba(255,255,255,.10);
+      --max:1240px;
     }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--black);
+      color:var(--white);
+      font-family:"DM Sans",sans-serif;
+      overflow-x:hidden;
+    }
+
+    ::selection{
+      background:var(--pink);
+      color:white;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(calc(100% - 48px),var(--max));
+      margin:auto;
+    }
+
+    /* ---------------- NAV ---------------- */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(5,5,5,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .brand{
+      font-family:"Montserrat",sans-serif;
+      font-size:21px;
+      font-weight:900;
+      letter-spacing:-1px;
+    }
+
+    .brand span{
+      color:var(--pink);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-links a{
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--pink);
+    }
+
+    .nav-cta{
+      padding:13px 20px;
+      background:var(--yellow);
+      color:#050505 !important;
+      border-radius:100px;
+      font-weight:800;
+    }
+
+    /* ---------------- HERO ---------------- */
 
     .hero{
-        min-height:90vh;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      padding:150px 0 90px;
+      overflow:hidden;
     }
 
-    .hero h1{
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:650px;
+      height:650px;
+      border-radius:50%;
+      background:var(--violet);
+      filter:blur(190px);
+      opacity:.20;
+      right:-240px;
+      top:-120px;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:480px;
+      height:480px;
+      border-radius:50%;
+      background:var(--pink);
+      filter:blur(180px);
+      opacity:.16;
+      left:-250px;
+      bottom:-100px;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:100%;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:100px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:30px;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--yellow);
+      box-shadow:0 0 15px var(--yellow);
+    }
+
+    h1{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(58px,8.7vw,132px);
+      line-height:.88;
+      letter-spacing:-6px;
+      font-weight:900;
+      max-width:1150px;
+    }
+
+    .outline{
+      color:transparent;
+      -webkit-text-stroke:2px var(--white);
+    }
+
+    .gradient-text{
+      background:linear-gradient(90deg,var(--pink),var(--lilac));
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .hero-bottom{
+      margin-top:42px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:50px;
+    }
+
+    .hero-copy{
+      max-width:620px;
+      font-size:20px;
+      line-height:1.55;
+      color:#d3d3da;
+    }
+
+    .buttons{
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:17px 25px;
+      border-radius:100px;
+      font-size:14px;
+      font-weight:800;
+      transition:.3s;
+    }
+
+    .btn-primary{
+      background:var(--yellow);
+      color:#050505;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 35px rgba(255,217,0,.18);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.2);
+    }
+
+    .btn-secondary:hover{
+      background:white;
+      color:black;
+    }
+
+    .rocket{
+      font-size:100px;
+      transform:rotate(-12deg);
+      filter:drop-shadow(0 0 25px rgba(255,28,142,.4));
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(-12deg)}
+      50%{transform:translateY(-18px) rotate(-7deg)}
+    }
+
+    /* ---------------- MARQUEE ---------------- */
+
+    .marquee{
+      overflow:hidden;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:var(--pink);
+      color:white;
+      transform:rotate(-1deg) scale(1.02);
+    }
+
+    .marquee-track{
+      display:flex;
+      width:max-content;
+      animation:marquee 28s linear infinite;
+      padding:18px 0;
+    }
+
+    .marquee span{
+      font-family:"Montserrat",sans-serif;
+      font-size:18px;
+      font-weight:900;
+      margin-right:40px;
+      white-space:nowrap;
+    }
+
+    @keyframes marquee{
+      to{transform:translateX(-50%)}
+    }
+
+    /* ---------------- GENERIC ---------------- */
+
+    section{
+      padding:130px 0;
+    }
+
+    .section-label{
+      color:var(--yellow);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:22px;
+    }
+
+    .section-title{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(42px,6vw,86px);
+      line-height:.96;
+      letter-spacing:-4px;
+      font-weight:900;
+      max-width:1050px;
+    }
+
+    .section-intro{
+      margin-top:28px;
+      color:var(--soft);
+      font-size:18px;
+      line-height:1.65;
+      max-width:700px;
+    }
+
+    /* ---------------- STATEMENT ---------------- */
+
+    .statement{
+      position:relative;
+    }
+
+    .statement strong{
+      color:var(--pink);
+    }
+
+    /* ---------------- SERVICES ---------------- */
+
+    .services{
+      background:#08080a;
+    }
+
+    .service-grid{
+      margin-top:65px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .service-card{
+      min-height:330px;
+      background:linear-gradient(145deg,#111116,#0c0c10);
+      border:1px solid var(--line);
+      padding:34px;
+      border-radius:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+      transition:.35s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(255,28,142,.5);
+    }
+
+    .service-number{
+      font-family:"Montserrat",sans-serif;
+      font-size:13px;
+      color:var(--pink);
+      font-weight:900;
+    }
+
+    .service-icon{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      font-family:"Montserrat",sans-serif;
+      font-size:27px;
+      line-height:1.05;
+      margin-bottom:14px;
+    }
+
+    .service-card p{
+      color:var(--soft);
+      line-height:1.55;
+    }
+
+    /* ---------------- ADS ---------------- */
+
+    .ads{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .ads-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .big-number{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(110px,18vw,260px);
+      font-weight:900;
+      line-height:.7;
+      color:transparent;
+      -webkit-text-stroke:2px var(--violet);
+      opacity:.65;
+    }
+
+    .ads-list{
+      margin-top:35px;
+      display:grid;
+      gap:14px;
+    }
+
+    .ads-item{
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      font-weight:700;
+    }
+
+    .ads-item span:last-child{
+      color:var(--pink);
+    }
+
+    /* ---------------- WEB ---------------- */
+
+    .web-section{
+      background:
+        radial-gradient(circle at 80% 10%,rgba(109,37,255,.22),transparent 35%),
+        radial-gradient(circle at 10% 90%,rgba(255,28,142,.18),transparent 35%),
+        #08080a;
+    }
+
+    .pricing{
+      margin-top:65px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .price-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:38px;
+      min-height:520px;
+      background:rgba(255,255,255,.025);
+      display:flex;
+      flex-direction:column;
+      transition:.35s;
+    }
+
+    .price-card.featured{
+      background:linear-gradient(160deg,var(--violet),#351071);
+      border-color:var(--lilac);
+      transform:translateY(-14px);
+    }
+
+    .price-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .price-card.featured:hover{
+      transform:translateY(-20px);
+    }
+
+    .price-tag{
+      color:var(--yellow);
+      font-weight:900;
+      letter-spacing:1.5px;
+      font-size:12px;
+      text-transform:uppercase;
+    }
+
+    .price-card h3{
+      margin-top:14px;
+      font-family:"Montserrat",sans-serif;
+      font-size:32px;
+    }
+
+    .price{
+      font-family:"Montserrat",sans-serif;
+      font-size:65px;
+      font-weight:900;
+      letter-spacing:-4px;
+      margin:25px 0;
+    }
+
+    .price small{
+      font-size:18px;
+      letter-spacing:0;
+      color:var(--soft);
+    }
+
+    .price-card ul{
+      list-style:none;
+      display:grid;
+      gap:14px;
+      color:#d5d5dd;
+      margin-bottom:30px;
+    }
+
+    .price-card li::before{
+      content:"✓";
+      color:var(--yellow);
+      font-weight:900;
+      margin-right:10px;
+    }
+
+    .price-card .btn{
+      margin-top:auto;
+    }
+
+    .pricing-note{
+      margin-top:30px;
+      color:var(--soft);
+      font-size:14px;
+    }
+
+    /* ---------------- PROCESS ---------------- */
+
+    .process-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+    }
+
+    .process-card{
+      padding:30px 25px;
+      border-top:1px solid rgba(255,255,255,.2);
+    }
+
+    .process-card span{
+      display:block;
+      color:var(--pink);
+      font-family:"Montserrat",sans-serif;
+      font-size:50px;
+      font-weight:900;
+      margin-bottom:25px;
+    }
+
+    .process-card h3{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .process-card p{
+      color:var(--soft);
+      line-height:1.5;
+    }
+
+    /* ---------------- EXPERIENCE ---------------- */
+
+    .experience{
+      background:var(--yellow);
+      color:#050505;
+    }
+
+    .experience .section-label{
+      color:#050505;
+    }
+
+    .experience-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:80px;
+      align-items:end;
+    }
+
+    .years{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(120px,22vw,310px);
+      font-weight:900;
+      line-height:.72;
+      letter-spacing:-15px;
+    }
+
+    .years-text{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(32px,5vw,68px);
+      line-height:.95;
+      font-weight:900;
+      letter-spacing:-3px;
+    }
+
+    .years-copy{
+      margin-top:30px;
+      max-width:600px;
+      line-height:1.6;
+      font-size:18px;
+    }
+
+    /* ---------------- TESTIMONIALS ---------------- */
+
+    .testimonials{
+      background:#08080a;
+    }
+
+    .testimonial-grid{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .testimonial{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:32px;
+    }
+
+    .stars{
+      color:var(--yellow);
+      letter-spacing:3px;
+      margin-bottom:22px;
+    }
+
+    .testimonial p{
+      font-size:18px;
+      line-height:1.6;
+    }
+
+    .testimonial footer{
+      margin-top:25px;
+      color:var(--soft);
+      font-size:14px;
+    }
+
+    /* ---------------- CONTACT ---------------- */
+
+    .contact{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .contact-box{
+      background:linear-gradient(130deg,var(--pink),var(--violet));
+      border-radius:40px;
+      padding:80px;
+      position:relative;
+    }
+
+    .contact-box h2{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(50px,7vw,100px);
+      line-height:.9;
+      letter-spacing:-5px;
+      max-width:950px;
+    }
+
+    .contact-box p{
+      font-size:20px;
+      max-width:650px;
+      margin:28px 0;
+      line-height:1.5;
+    }
+
+    .contact-box .btn-primary{
+      background:var(--yellow);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    .footer{
+      padding:70px 0 30px;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      margin-bottom:80px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:50px;
+      flex-wrap:wrap;
+      color:var(--soft);
+    }
+
+    .footer-word{
+      font-family:"Montserrat",sans-serif;
+      font-size:clamp(55px,11vw,160px);
+      font-weight:900;
+      letter-spacing:-8px;
+      line-height:.8;
+      background:linear-gradient(90deg,var(--pink),var(--violet),var(--yellow));
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .footer-bottom{
+      margin-top:45px;
+      padding-top:25px;
+      border-top:1px solid var(--line);
+      color:#777780;
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    /* ---------------- REVEAL ---------------- */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:opacity .8s ease,transform .8s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+
+    @media(max-width:950px){
+
+      .nav-links a:not(.nav-cta){
+        display:none;
+      }
+
+      h1{
         letter-spacing:-4px;
-    }
+      }
 
-    .grid{
+      .hero-bottom{
+        display:block;
+      }
+
+      .rocket{
+        display:none;
+      }
+
+      .service-grid,
+      .pricing,
+      .testimonial-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .ads-grid,
+      .experience-grid{
         grid-template-columns:1fr;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .price-card.featured{
+        transform:none;
+      }
     }
 
-    .features{
+    @media(max-width:650px){
+
+      .container{
+        width:min(calc(100% - 30px),var(--max));
+      }
+
+      .nav-inner{
+        min-height:70px;
+      }
+
+      .brand{
+        font-size:18px;
+      }
+
+      .nav-cta{
+        padding:11px 15px;
+        font-size:12px;
+      }
+
+      .hero{
+        padding-top:125px;
+      }
+
+      h1{
+        font-size:clamp(51px,16vw,82px);
+        letter-spacing:-4px;
+      }
+
+      .hero-copy{
+        font-size:17px;
+      }
+
+      section{
+        padding:90px 0;
+      }
+
+      .section-title{
+        letter-spacing:-2.5px;
+      }
+
+      .service-grid,
+      .pricing,
+      .process-grid,
+      .testimonial-grid{
         grid-template-columns:1fr;
-    }
+      }
 
-    .plan{
-        padding:35px 25px;
-    }
+      .price-card{
+        min-height:auto;
+      }
 
-    .step{
-        grid-template-columns:50px 1fr;
-    }
+      .contact-box{
+        padding:45px 25px;
+        border-radius:25px;
+      }
 
-    footer{
+      .contact-box h2{
+        letter-spacing:-3px;
+      }
+
+      .footer-top,
+      .footer-bottom{
         flex-direction:column;
-        align-items:flex-start;
-        gap:25px;
+      }
+
+      .footer-word{
+        letter-spacing:-4px;
+      }
     }
 
-}
-
-</style>
+  </style>
 </head>
 
 <body>
 
 <nav>
+  <div class="container nav-inner">
+    <a href="#" class="brand">CALEMAN<span>DESIGN</span></a>
 
-<div class="logo">
-CREATIVA<span>NET</span>
-</div>
-
-<div class="links">
-<a href="#incluye">Qué incluye</a>
-<a href="#proceso">Cómo funciona</a>
-<a href="#plan">Planes</a>
-<a class="nav-btn" href="#contacto">Quiero mi web</a>
-</div>
-
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#publicidad">Publicidad</a>
+      <a href="#web">Web</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto" class="nav-cta">Hablemos →</a>
+    </div>
+  </div>
 </nav>
 
 
 <header class="hero">
 
-<div class="glow"></div>
-<div class="glow2"></div>
+  <div class="container hero-content">
 
-<div class="hero-content">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Agencia de Marketing Digital · Montevideo
+    </div>
 
-<div class="tag">Webs para negocios reales</div>
+    <h1>
+      HACEMOS QUE<br>
+      TU MARCA <span class="gradient-text">SE MUEVA.</span>
+    </h1>
 
-<h1>
-TU NEGOCIO<br>
-MERECE ESTAR<br>
-<span>ONLINE.</span>
-</h1>
+    <div class="hero-bottom">
 
-<p class="hero-text">
-Creamos sitios web profesionales, rápidos y accesibles.
-Sin complicaciones técnicas. Sin pagar un hosting todos los meses.
-</p>
+      <div>
+        <p class="hero-copy">
+          Estrategia, publicidad, contenido, diseño y tecnología para
+          transformar presencia digital en oportunidades reales de negocio.
+        </p>
 
-<div class="buttons">
+        <div class="buttons">
+          <a href="#contacto" class="btn btn-primary">QUIERO CRECER →</a>
+          <a href="#servicios" class="btn btn-secondary">VER QUÉ HACEMOS</a>
+        </div>
+      </div>
 
-<a href="#contacto" class="btn btn-primary">
-Quiero mi web →
-</a>
+      <div class="rocket">🚀</div>
 
-<a href="#incluye" class="btn btn-secondary">
-Ver cómo funciona
-</a>
+    </div>
 
-</div>
-
-<div class="by">
-Un proyecto de <strong>CalemanDesign</strong>
-</div>
-
-</div>
+  </div>
 
 </header>
 
 
 <div class="marquee">
-
-<div>
-DISEÑO PROFESIONAL ✦ RESPONSIVE ✦ HOSTING INCLUIDO ✦ SEO BÁSICO ✦ WHATSAPP ✦ TU NEGOCIO ONLINE ✦ 
-DISEÑO PROFESIONAL ✦ RESPONSIVE ✦ HOSTING INCLUIDO ✦ SEO BÁSICO ✦ WHATSAPP ✦ TU NEGOCIO ONLINE ✦
+  <div class="marquee-track">
+    <span>META ADS ✦</span>
+    <span>GOOGLE ADS ✦</span>
+    <span>DISEÑO WEB ✦</span>
+    <span>REDES SOCIALES ✦</span>
+    <span>ESTRATEGIA ✦</span>
+    <span>CONTENIDO ✦</span>
+    <span>BRANDING ✦</span>
+    <span>META ADS ✦</span>
+    <span>GOOGLE ADS ✦</span>
+    <span>DISEÑO WEB ✦</span>
+    <span>REDES SOCIALES ✦</span>
+    <span>ESTRATEGIA ✦</span>
+    <span>CONTENIDO ✦</span>
+    <span>BRANDING ✦</span>
+  </div>
 </div>
 
-</div>
 
+<section class="statement">
 
-<section class="intro" id="incluye">
+  <div class="container reveal">
 
-<span class="eyebrow">Menos complicaciones. Más presencia.</span>
+    <div class="section-label">El problema no es publicar</div>
 
-<h2 class="section-title">
-Todo lo que necesitás para empezar.
-</h2>
+    <h2 class="section-title">
+      TU NEGOCIO NO NECESITA PUBLICAR MÁS.
+      <strong>NECESITA UNA ESTRATEGIA QUE VENDA.</strong>
+    </h2>
 
-<div class="grid">
+    <p class="section-intro">
+      No hacemos contenido porque sí. Analizamos, diseñamos, comunicamos,
+      publicitamos y optimizamos con un objetivo claro: hacer crecer tu negocio.
+    </p>
 
-<div class="card">
-<div class="number">01</div>
-<h3>Diseño profesional</h3>
-<p>
-Una web creada para tu negocio, cuidando identidad, jerarquía visual y experiencia de usuario.
-</p>
-</div>
-
-<div class="card">
-<div class="number">02</div>
-<h3>100% responsive</h3>
-<p>
-Diseñada para verse correctamente en celular, tablet y computadora.
-</p>
-</div>
-
-<div class="card">
-<div class="number">03</div>
-<h3>Hosting incluido</h3>
-<p>
-Tu sitio permanece online sin que tengas que contratar un plan mensual de hosting tradicional.
-</p>
-</div>
-
-<div class="card">
-<div class="number">04</div>
-<h3>Dominio propio</h3>
-<p>
-Conectamos tu dominio para que tu negocio tenga una dirección profesional en Internet.
-</p>
-</div>
-
-<div class="card">
-<div class="number">05</div>
-<h3>WhatsApp</h3>
-<p>
-Tus potenciales clientes pueden contactarte directamente desde la web.
-</p>
-</div>
-
-<div class="card">
-<div class="number">06</div>
-<h3>SEO básico</h3>
-<p>
-Configuramos la estructura inicial para que los buscadores puedan entender tu sitio.
-</p>
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<section class="steps" id="proceso">
+<section class="services" id="servicios">
 
-<span class="eyebrow">Simple desde el comienzo</span>
+  <div class="container">
 
-<h2 class="section-title">
-Tu web en cuatro pasos.
-</h2>
+    <div class="reveal">
+      <div class="section-label">Lo que hacemos</div>
+      <h2 class="section-title">
+        TODO LO QUE TU MARCA NECESITA PARA CRECER.
+      </h2>
+    </div>
 
-<div class="steps-container">
+    <div class="service-grid">
 
-<div class="step">
-<div class="step-number">01</div>
-<div>
-<h3>Nos contás sobre tu negocio.</h3>
-<p>
-Completás un breve formulario con la información que necesitamos.
-</p>
-</div>
-</div>
+      <article class="service-card reveal">
+        <span class="service-number">01</span>
+        <div>
+          <div class="service-icon">◎</div>
+          <h3>Publicidad Digital</h3>
+          <p>Meta Ads y Google Ads orientados a generar oportunidades reales.</p>
+        </div>
+      </article>
 
-<div class="step">
-<div class="step-number">02</div>
-<div>
-<h3>Diseñamos.</h3>
-<p>
-Transformamos tu información en una presencia digital profesional.
-</p>
-</div>
-</div>
+      <article class="service-card reveal">
+        <span class="service-number">02</span>
+        <div>
+          <div class="service-icon">✦</div>
+          <h3>Redes & Contenido</h3>
+          <p>Estrategia, diseño y contenido para construir marcas que se recuerdan.</p>
+        </div>
+      </article>
 
-<div class="step">
-<div class="step-number">03</div>
-<div>
-<h3>Conectamos.</h3>
-<p>
-Configuramos tu dominio y dejamos toda la parte técnica funcionando.
-</p>
-</div>
-</div>
+      <article class="service-card reveal">
+        <span class="service-number">03</span>
+        <div>
+          <div class="service-icon">↗</div>
+          <h3>Diseño Web</h3>
+          <p>Sitios rápidos, profesionales, responsive y preparados para convertir.</p>
+        </div>
+      </article>
 
-<div class="step">
-<div class="step-number">04</div>
-<div>
-<h3>Estás online.</h3>
-<p>
-Tu negocio ya tiene un espacio propio en Internet listo para recibir clientes.
-</p>
-</div>
-</div>
+      <article class="service-card reveal">
+        <span class="service-number">04</span>
+        <div>
+          <div class="service-icon">◉</div>
+          <h3>Branding & Diseño</h3>
+          <p>Identidad visual y piezas que hacen reconocible a tu negocio.</p>
+        </div>
+      </article>
 
-</div>
+      <article class="service-card reveal">
+        <span class="service-number">05</span>
+        <div>
+          <div class="service-icon">⌁</div>
+          <h3>Estrategia Digital</h3>
+          <p>Ordenamos canales, objetivos y acciones para que todo trabaje en conjunto.</p>
+        </div>
+      </article>
 
-</section>
+      <article class="service-card reveal">
+        <span class="service-number">06</span>
+        <div>
+          <div class="service-icon">◇</div>
+          <h3>Consultoría</h3>
+          <p>Analizamos qué está funcionando, qué no y dónde están las oportunidades.</p>
+        </div>
+      </article>
 
+    </div>
 
-<section class="plan-section" id="plan">
-
-<span class="eyebrow">Una solución simple</span>
-
-<h2 class="section-title">
-Tu primera web no tiene que ser complicada.
-</h2>
-
-<div class="plan">
-
-<div class="plan-label">Creativa Net · Web Start</div>
-
-<h3>WEB PROFESIONAL</h3>
-
-<p class="plan-subtitle">
-Ideal para profesionales, emprendimientos y pequeñas empresas.
-</p>
-
-<div class="features">
-
-<div class="feature">Sitio One Page</div>
-<div class="feature">Diseño personalizado</div>
-<div class="feature">Adaptado a celulares</div>
-<div class="feature">Botón de WhatsApp</div>
-<div class="feature">Formulario de contacto</div>
-<div class="feature">Redes sociales</div>
-<div class="feature">SEO básico</div>
-<div class="feature">Hosting incluido</div>
-
-</div>
-
-<a href="#contacto" class="btn btn-primary">
-Solicitar información →
-</a>
-
-<p class="small">
-Dominio no incluido. El cliente mantiene la titularidad de su dominio.
-</p>
-
-</div>
+  </div>
 
 </section>
 
 
-<section class="cta" id="contacto">
+<section class="ads" id="publicidad">
 
-<h2>
-¿LISTO PARA<br>
-ESTAR ONLINE?
-</h2>
+  <div class="container ads-grid">
 
-<p>
-Contanos sobre tu negocio y te ayudamos a crear una web profesional, simple y pensada para crecer.
-</p>
+    <div class="reveal">
 
-<a href="#" class="btn">
-Quiero empezar →
-</a>
+      <div class="section-label">Performance</div>
+
+      <h2 class="section-title">
+        PUBLICIDAD SIN ESTRATEGIA ES SOLO GASTAR DINERO.
+      </h2>
+
+      <p class="section-intro">
+        Diseñamos campañas pensando en el recorrido completo:
+        anuncio, audiencia, mensaje, landing, contacto y seguimiento comercial.
+      </p>
+
+      <div class="ads-list">
+        <div class="ads-item"><span>Meta Ads</span><span>Instagram + Facebook</span></div>
+        <div class="ads-item"><span>Google Ads</span><span>Búsqueda + intención</span></div>
+        <div class="ads-item"><span>Remarketing</span><span>Volver a impactar</span></div>
+        <div class="ads-item"><span>Optimización</span><span>Medir + mejorar</span></div>
+      </div>
+
+    </div>
+
+    <div class="big-number reveal">ADS</div>
+
+  </div>
 
 </section>
 
 
-<footer>
+<section class="web-section" id="web">
 
-<div>
+  <div class="container">
 
-<div class="footer-logo">
-CREATIVA<span>NET</span>
-</div>
+    <div class="reveal">
 
-<p>Webs simples para negocios que quieren crecer.</p>
+      <div class="section-label">Diseño & Desarrollo Web</div>
 
-</div>
+      <h2 class="section-title">
+        DE IDEA A ONLINE.
+        <span class="gradient-text">SIN COMPLICACIONES.</span>
+      </h2>
 
-<div>
-<p>by CalemanDesign · Montevideo, Uruguay</p>
-</div>
+      <p class="section-intro">
+        Tu negocio merece una web profesional. Creamos sitios rápidos,
+        responsive y preparados para conectar con tus clientes.
+      </p>
+
+    </div>
+
+
+    <div class="pricing">
+
+      <article class="price-card reveal">
+
+        <div class="price-tag">Web Start</div>
+
+        <h3>One Page</h3>
+
+        <div class="price">
+          <small>USD</small> 200
+        </div>
+
+        <ul>
+          <li>Sitio de una página</li>
+          <li>Diseño profesional</li>
+          <li>Responsive</li>
+          <li>Botón de WhatsApp</li>
+          <li>Formulario de contacto</li>
+          <li>Redes sociales</li>
+          <li>SEO básico</li>
+          <li>Hosting incluido</li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-secondary">QUIERO ESTA WEB →</a>
+
+      </article>
+
+
+      <article class="price-card featured reveal">
+
+        <div class="price-tag">Web Business</div>
+
+        <h3>Hasta 5 páginas</h3>
+
+        <div class="price">
+          <small>USD</small> 400
+        </div>
+
+        <ul>
+          <li>Hasta 5 páginas</li>
+          <li>Diseño profesional</li>
+          <li>Responsive</li>
+          <li>WhatsApp</li>
+          <li>Formulario</li>
+          <li>Redes sociales</li>
+          <li>SEO básico</li>
+          <li>Hosting incluido</li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-primary">QUIERO ESTA WEB →</a>
+
+      </article>
+
+
+      <article class="price-card reveal">
+
+        <div class="price-tag">Web Custom</div>
+
+        <h3>A medida</h3>
+
+        <div class="price">
+          A cotizar
+        </div>
+
+        <ul>
+          <li>E-commerce</li>
+          <li>Integraciones</li>
+          <li>Funciones especiales</li>
+          <li>Proyectos personalizados</li>
+          <li>Arquitecturas complejas</li>
+          <li>Soluciones a medida</li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-secondary">CONTANOS TU IDEA →</a>
+
+      </article>
+
+    </div>
+
+    <p class="pricing-note">
+      * Dominio no incluido. Hosting incluido en los planes indicados.
+      Sin mensualidades obligatorias. Mantenimiento opcional disponible.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="container">
+
+    <div class="reveal">
+
+      <div class="section-label">Cómo trabajamos</div>
+
+      <h2 class="section-title">
+        MENOS VUELTAS.
+        MÁS ACCIÓN.
+      </h2>
+
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card reveal">
+        <span>01</span>
+        <h3>Escuchamos</h3>
+        <p>Entendemos tu negocio, necesidades y objetivos.</p>
+      </div>
+
+      <div class="process-card reveal">
+        <span>02</span>
+        <h3>Pensamos</h3>
+        <p>Diseñamos una estrategia adecuada a tu realidad.</p>
+      </div>
+
+      <div class="process-card reveal">
+        <span>03</span>
+        <h3>Creamos</h3>
+        <p>Convertimos estrategia en comunicación y acciones.</p>
+      </div>
+
+      <div class="process-card reveal">
+        <span>04</span>
+        <h3>Optimizamos</h3>
+        <p>Medimos, aprendemos y mejoramos continuamente.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="experience" id="nosotros">
+
+  <div class="container experience-grid">
+
+    <div class="years reveal">20+</div>
+
+    <div class="reveal">
+
+      <div class="section-label">Experiencia que importa</div>
+
+      <div class="years-text">
+        AÑOS CREANDO,
+        DISEÑANDO Y
+        EVOLUCIONANDO.
+      </div>
+
+      <p class="years-copy">
+        CalemanDesign combina experiencia en diseño, comunicación,
+        tecnología y marketing digital para ayudar a empresas y
+        emprendedores a crecer en un entorno que cambia todos los días.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="testimonials">
+
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-label">Clientes</div>
+      <h2 class="section-title">LAS MARCAS HABLAN POR NOSOTROS.</h2>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <article class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Un equipo comprometido, creativo y siempre atento a las necesidades de nuestra marca.”
+        </p>
+        <footer>Cliente CalemanDesign</footer>
+      </article>
+
+      <article class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Profesionalismo, estrategia y acompañamiento. Una verdadera extensión de nuestro equipo.”
+        </p>
+        <footer>Cliente CalemanDesign</footer>
+      </article>
+
+      <article class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Logramos ordenar nuestra comunicación digital y darle una identidad mucho más profesional.”
+        </p>
+        <footer>Cliente CalemanDesign</footer>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contacto">
+
+  <div class="container">
+
+    <div class="contact-box reveal">
+
+      <h2>
+        ¿HACEMOS DESPEGAR TU MARCA?
+      </h2>
+
+      <p>
+        Contanos qué necesitás. Analizamos tu proyecto y te proponemos
+        una solución pensada para tu negocio.
+      </p>
+
+      <a href="https://wa.me/" class="btn btn-primary">
+        HABLEMOS POR WHATSAPP →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+        <div class="brand">CALEMAN<span>DESIGN</span></div>
+        <p style="color:#888;margin-top:12px;">
+          Marketing · Publicidad · Diseño · Tecnología
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#publicidad">Publicidad</a>
+        <a href="#web">Diseño Web</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+    </div>
+
+    <div class="footer-word">
+      CALEMANDESIGN
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 CalemanDesign. Todos los derechos reservados.</span>
+      <span>Montevideo · Uruguay</span>
+    </div>
+
+  </div>
 
 </footer>
+
+
+<script>
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  },{
+    threshold:.12
+  });
+
+  document.querySelectorAll(".reveal").forEach(el=>{
+    observer.observe(el);
+  });
+
+</script>
 
 </body>
 </html>
