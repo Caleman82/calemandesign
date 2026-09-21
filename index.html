@@ -1,21 +1,731 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creativa Net | by CalemanDesign</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Creativa Net | Webs profesionales</title>
+
+<meta name="description" content="Creamos webs profesionales, rápidas y accesibles para negocios que quieren crecer online. Un proyecto de CalemanDesign.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#070709;
+    color:#ffffff;
+    line-height:1.5;
+}
+
+:root{
+    --neon:#c7ff00;
+    --violet:#8b5cf6;
+    --black:#070709;
+    --dark:#101014;
+    --gray:#a4a4ad;
+    --white:#ffffff;
+}
+
+/* NAV */
+
+nav{
+    width:100%;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:absolute;
+    z-index:10;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:var(--neon);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:28px;
+    font-size:14px;
+}
+
+.nav-btn{
+    border:1px solid var(--neon);
+    padding:11px 20px;
+    border-radius:50px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:130px 7% 80px;
+    position:relative;
+    overflow:hidden;
+}
+
+.glow{
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:var(--violet);
+    filter:blur(180px);
+    opacity:.20;
+    right:-180px;
+    top:50px;
+    border-radius:50%;
+}
+
+.glow2{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:var(--neon);
+    filter:blur(170px);
+    opacity:.08;
+    left:-150px;
+    bottom:-100px;
+}
+
+.hero-content{
+    max-width:1000px;
+    position:relative;
+    z-index:2;
+}
+
+.tag{
+    display:inline-block;
+    color:var(--neon);
+    border:1px solid #34343b;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:clamp(60px,9vw,135px);
+    line-height:.88;
+    letter-spacing:-7px;
+    font-weight:900;
+    max-width:1200px;
+}
+
+.hero h1 span{
+    color:var(--neon);
+}
+
+.hero-text{
+    max-width:650px;
+    margin-top:35px;
+    font-size:20px;
+    color:#b9b9c1;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:17px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--neon);
+    color:#080808;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 40px rgba(199,255,0,.25);
+}
+
+.btn-secondary{
+    border:1px solid #38383f;
+    color:white;
+}
+
+.by{
+    margin-top:60px;
+    color:#66666f;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.by strong{
+    color:white;
+}
+
+/* MARQUEE */
+
+.marquee{
+    background:var(--neon);
+    color:#080808;
+    padding:16px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:15px;
+}
+
+.marquee div{
+    display:inline-block;
+    animation:move 22s linear infinite;
+}
+
+@keyframes move{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+}
+
+/* GENERAL */
+
+section{
+    padding:110px 7%;
+}
+
+.eyebrow{
+    color:var(--neon);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.section-title{
+    font-size:clamp(42px,6vw,78px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-top:18px;
+    max-width:850px;
+}
+
+/* BENEFICIOS */
+
+.intro{
+    background:#0d0d11;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    margin-top:70px;
+    background:#292930;
+    border:1px solid #292930;
+}
+
+.card{
+    background:#0d0d11;
+    padding:45px 35px;
+    min-height:260px;
+    transition:.3s;
+}
+
+.card:hover{
+    background:#15151b;
+}
+
+.number{
+    color:var(--neon);
+    font-size:13px;
+    margin-bottom:50px;
+}
+
+.card h3{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#9999a3;
+    font-size:15px;
+}
+
+/* COMO FUNCIONA */
+
+.steps{
+    background:#f2f2ed;
+    color:#0b0b0d;
+}
+
+.steps .eyebrow{
+    color:#6335e5;
+}
+
+.steps-container{
+    margin-top:65px;
+}
+
+.step{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    padding:35px 0;
+    border-top:1px solid #c9c9c5;
+}
+
+.step-number{
+    font-size:14px;
+    font-weight:bold;
+}
+
+.step h3{
+    font-size:clamp(28px,4vw,48px);
+    letter-spacing:-2px;
+}
+
+.step p{
+    color:#666;
+    max-width:600px;
+    margin-top:8px;
+}
+
+/* PLAN */
+
+.plan-section{
+    position:relative;
+    overflow:hidden;
+}
+
+.plan{
+    margin-top:65px;
+    max-width:900px;
+    border:1px solid #33333b;
+    padding:50px;
+    position:relative;
+    background:linear-gradient(145deg,#101014,#09090b);
+}
+
+.plan-label{
+    color:var(--neon);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.plan h3{
+    font-size:50px;
+    margin-top:10px;
+}
+
+.plan-subtitle{
+    color:#9999a3;
+    margin-top:10px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px 40px;
+    margin:40px 0;
+}
+
+.feature{
+    border-top:1px solid #292930;
+    padding-top:15px;
+    color:#c6c6cc;
+}
+
+.feature::before{
+    content:"↗";
+    color:var(--neon);
+    margin-right:10px;
+}
+
+.small{
+    color:#676770;
+    font-size:12px;
+    margin-top:25px;
+}
+
+/* CTA */
+
+.cta{
+    background:var(--neon);
+    color:#080808;
+}
+
+.cta h2{
+    font-size:clamp(55px,8vw,110px);
+    line-height:.88;
+    letter-spacing:-6px;
+    max-width:1000px;
+}
+
+.cta p{
+    max-width:550px;
+    margin-top:30px;
+    font-size:18px;
+}
+
+.cta .btn{
+    background:#080808;
+    color:white;
+    margin-top:30px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:50px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    background:#070709;
+}
+
+.footer-logo{
+    font-size:28px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:var(--neon);
+}
+
+footer p{
+    color:#686870;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav .links{
+        display:none;
+    }
+
+    .hero{
+        min-height:90vh;
+    }
+
+    .hero h1{
+        letter-spacing:-4px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .plan{
+        padding:35px 25px;
+    }
+
+    .step{
+        grid-template-columns:50px 1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:25px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
-  <h1>CREATIVA NET</h1>
-  <h2>Tu negocio merece estar online.</h2>
 
-  <p>
-    Creamos sitios web simples, profesionales y pensados para hacer crecer tu negocio.
-  </p>
+<nav>
 
-  <p>
-    by CalemanDesign
-  </p>
+<div class="logo">
+CREATIVA<span>NET</span>
+</div>
+
+<div class="links">
+<a href="#incluye">Qué incluye</a>
+<a href="#proceso">Cómo funciona</a>
+<a href="#plan">Planes</a>
+<a class="nav-btn" href="#contacto">Quiero mi web</a>
+</div>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<div class="hero-content">
+
+<div class="tag">Webs para negocios reales</div>
+
+<h1>
+TU NEGOCIO<br>
+MERECE ESTAR<br>
+<span>ONLINE.</span>
+</h1>
+
+<p class="hero-text">
+Creamos sitios web profesionales, rápidos y accesibles.
+Sin complicaciones técnicas. Sin pagar un hosting todos los meses.
+</p>
+
+<div class="buttons">
+
+<a href="#contacto" class="btn btn-primary">
+Quiero mi web →
+</a>
+
+<a href="#incluye" class="btn btn-secondary">
+Ver cómo funciona
+</a>
+
+</div>
+
+<div class="by">
+Un proyecto de <strong>CalemanDesign</strong>
+</div>
+
+</div>
+
+</header>
+
+
+<div class="marquee">
+
+<div>
+DISEÑO PROFESIONAL ✦ RESPONSIVE ✦ HOSTING INCLUIDO ✦ SEO BÁSICO ✦ WHATSAPP ✦ TU NEGOCIO ONLINE ✦ 
+DISEÑO PROFESIONAL ✦ RESPONSIVE ✦ HOSTING INCLUIDO ✦ SEO BÁSICO ✦ WHATSAPP ✦ TU NEGOCIO ONLINE ✦
+</div>
+
+</div>
+
+
+<section class="intro" id="incluye">
+
+<span class="eyebrow">Menos complicaciones. Más presencia.</span>
+
+<h2 class="section-title">
+Todo lo que necesitás para empezar.
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="number">01</div>
+<h3>Diseño profesional</h3>
+<p>
+Una web creada para tu negocio, cuidando identidad, jerarquía visual y experiencia de usuario.
+</p>
+</div>
+
+<div class="card">
+<div class="number">02</div>
+<h3>100% responsive</h3>
+<p>
+Diseñada para verse correctamente en celular, tablet y computadora.
+</p>
+</div>
+
+<div class="card">
+<div class="number">03</div>
+<h3>Hosting incluido</h3>
+<p>
+Tu sitio permanece online sin que tengas que contratar un plan mensual de hosting tradicional.
+</p>
+</div>
+
+<div class="card">
+<div class="number">04</div>
+<h3>Dominio propio</h3>
+<p>
+Conectamos tu dominio para que tu negocio tenga una dirección profesional en Internet.
+</p>
+</div>
+
+<div class="card">
+<div class="number">05</div>
+<h3>WhatsApp</h3>
+<p>
+Tus potenciales clientes pueden contactarte directamente desde la web.
+</p>
+</div>
+
+<div class="card">
+<div class="number">06</div>
+<h3>SEO básico</h3>
+<p>
+Configuramos la estructura inicial para que los buscadores puedan entender tu sitio.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="steps" id="proceso">
+
+<span class="eyebrow">Simple desde el comienzo</span>
+
+<h2 class="section-title">
+Tu web en cuatro pasos.
+</h2>
+
+<div class="steps-container">
+
+<div class="step">
+<div class="step-number">01</div>
+<div>
+<h3>Nos contás sobre tu negocio.</h3>
+<p>
+Completás un breve formulario con la información que necesitamos.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<div>
+<h3>Diseñamos.</h3>
+<p>
+Transformamos tu información en una presencia digital profesional.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<div>
+<h3>Conectamos.</h3>
+<p>
+Configuramos tu dominio y dejamos toda la parte técnica funcionando.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">04</div>
+<div>
+<h3>Estás online.</h3>
+<p>
+Tu negocio ya tiene un espacio propio en Internet listo para recibir clientes.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="plan-section" id="plan">
+
+<span class="eyebrow">Una solución simple</span>
+
+<h2 class="section-title">
+Tu primera web no tiene que ser complicada.
+</h2>
+
+<div class="plan">
+
+<div class="plan-label">Creativa Net · Web Start</div>
+
+<h3>WEB PROFESIONAL</h3>
+
+<p class="plan-subtitle">
+Ideal para profesionales, emprendimientos y pequeñas empresas.
+</p>
+
+<div class="features">
+
+<div class="feature">Sitio One Page</div>
+<div class="feature">Diseño personalizado</div>
+<div class="feature">Adaptado a celulares</div>
+<div class="feature">Botón de WhatsApp</div>
+<div class="feature">Formulario de contacto</div>
+<div class="feature">Redes sociales</div>
+<div class="feature">SEO básico</div>
+<div class="feature">Hosting incluido</div>
+
+</div>
+
+<a href="#contacto" class="btn btn-primary">
+Solicitar información →
+</a>
+
+<p class="small">
+Dominio no incluido. El cliente mantiene la titularidad de su dominio.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="cta" id="contacto">
+
+<h2>
+¿LISTO PARA<br>
+ESTAR ONLINE?
+</h2>
+
+<p>
+Contanos sobre tu negocio y te ayudamos a crear una web profesional, simple y pensada para crecer.
+</p>
+
+<a href="#" class="btn">
+Quiero empezar →
+</a>
+
+</section>
+
+
+<footer>
+
+<div>
+
+<div class="footer-logo">
+CREATIVA<span>NET</span>
+</div>
+
+<p>Webs simples para negocios que quieren crecer.</p>
+
+</div>
+
+<div>
+<p>by CalemanDesign · Montevideo, Uruguay</p>
+</div>
+
+</footer>
+
 </body>
 </html>
