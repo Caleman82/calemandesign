@@ -1744,6 +1744,153 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
 .case-study.nicole .metric strong{color:var(--pink2)}.case-study.rocco .metric strong{color:var(--lilac)}
 @media(max-width:950px){.cases-head{grid-template-columns:1fr;gap:18px}.cases-head p{margin:0}.case-study,.case-study:nth-child(even){grid-template-columns:1fr}.case-study:nth-child(even) .case-stage{order:0}.case-stage{min-height:430px}.case-info{padding:36px 30px}}
 @media(max-width:650px){.cases-list{gap:20px}.case-study{border-radius:22px}.case-stage{min-height:350px;padding:30px 22px}.browser{height:290px;border-radius:14px}.phone{width:120px;height:245px;right:4%;bottom:18px;border-radius:23px}.phone img{border-radius:17px}.art-card{width:125px;right:4%;bottom:20px}.case-info{padding:30px 22px}.case-info h3{font-size:2rem}.metric strong{font-size:2.8rem}}
+
+/* PORTFOLIO UNIFORME: web + celular en todos los casos */
+.case-study,.case-study:nth-child(even){grid-template-columns:1.15fr .85fr}
+.case-study:nth-child(even) .case-stage{order:0}
+.case-stage{min-height:520px;padding:48px}
+.case-stage .browser{width:min(100%,570px);height:390px;transform:rotate(-1.4deg)}
+.case-stage .phone{position:absolute;width:170px;height:350px;right:6%;bottom:24px;padding:7px;border-radius:30px;background:#111;border:1px solid rgba(255,255,255,.25);box-shadow:0 24px 55px rgba(0,0,0,.52);transform:rotate(5deg);overflow:hidden}
+.case-stage .phone img{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:23px}
+@media(max-width:950px){.case-study,.case-study:nth-child(even){grid-template-columns:1fr}.case-stage{min-height:430px}}
+@media(max-width:650px){.case-stage{min-height:350px;padding:30px 22px}.case-stage .browser{height:290px}.case-stage .phone{width:120px;height:245px;right:4%;bottom:18px;border-radius:23px}.case-stage .phone img{border-radius:17px}}
+
+
+/* ===== AJUSTE FINAL: TÍTULOS SIN RECORTES ===== */
+.hero,
+.hero-grid,
+.hero-copy,
+.section,
+.wrap,
+.cases-head,
+.case-info,
+.contact-box,
+.experience {
+  overflow: visible;
+}
+
+.hero h1,
+section h2,
+.case-info h3,
+.contact-box h2 {
+  overflow: visible;
+  text-wrap: balance;
+  padding-right: .08em;
+  padding-bottom: .08em;
+}
+
+.hero h1 {
+  line-height: .96;
+  letter-spacing: -.065em;
+  padding-right: .14em; /* evita cortar el punto final */
+}
+
+@media (max-width: 950px) {
+  .hero h1 {
+    font-size: clamp(3.6rem, 10vw, 6.6rem);
+    line-height: .98;
+    letter-spacing: -.055em;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero h1 {
+    font-size: clamp(3rem, 13vw, 5rem);
+    line-height: 1;
+    letter-spacing: -.045em;
+    padding-right: .12em;
+  }
+  section h2,
+  .case-info h3,
+  .contact-box h2 {
+    line-height: 1.02;
+    letter-spacing: -.045em;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero h1 {
+    font-size: clamp(2.65rem, 12.8vw, 4rem);
+    letter-spacing: -.035em;
+  }
+}
+
+
+/* ===== FIX REAL DEL PUNTO Y REMATES EN TÍTULOS ===== */
+/* El recorte estaba en el span con background-clip, no en el H1. */
+.hero h1 .gradient-text,
+section h2 .gradient-text,
+.contact-box h2 .gradient-text {
+  display:inline-block;
+  overflow:visible;
+  padding-right:.16em;
+  margin-right:-.02em;
+  padding-bottom:.06em;
+  box-sizing:content-box;
+}
+
+.hero h1 {
+  max-width:1100px;
+}
+
+@media(max-width:650px){
+  .hero h1 .gradient-text,
+  section h2 .gradient-text,
+  .contact-box h2 .gradient-text {
+    padding-right:.20em;
+  }
+}
+
+
+/* ===== FOOTER COMPLETO + LEGAL ===== */
+.footer-top{
+  display:grid;
+  grid-template-columns:1.3fr .72fr .78fr 1fr .72fr;
+  gap:46px;
+  padding:62px 0 42px;
+  border-top:1px solid var(--line);
+}
+.footer-intro p{max-width:340px;margin-top:14px;color:var(--soft);font-size:.92rem;line-height:1.65}
+.footer-col h4{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lilac);margin:0 0 18px}
+.footer-col a{display:block;width:max-content;max-width:100%;color:#d6d6dc;text-decoration:none;font-size:.9rem;margin:0 0 11px;transition:color .2s ease,transform .2s ease}
+.footer-col a:hover{color:#fff;transform:translateX(3px)}
+.footer-socials a{display:flex;align-items:center;gap:8px}
+.footer-legal-note{color:#777;font-size:.72rem;line-height:1.55;max-width:360px;margin-top:16px}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:34px}}
+@media(max-width:600px){.footer-top{grid-template-columns:1fr;gap:28px;padding:48px 0 30px}.footer-col a{font-size:.95rem}}
+
+.cookie-banner{
+  position:fixed;left:22px;right:22px;bottom:22px;z-index:9999;
+  max-width:920px;margin:auto;padding:20px 22px;
+  border:1px solid rgba(255,255,255,.16);border-radius:20px;
+  background:rgba(10,10,13,.96);backdrop-filter:blur(18px);
+  box-shadow:0 22px 70px rgba(0,0,0,.55);
+  display:none;grid-template-columns:1fr auto;gap:22px;align-items:center
+}
+.cookie-banner.show{display:grid}
+.cookie-copy strong{display:block;font-family:"Montserrat";font-size:.94rem;margin-bottom:6px}
+.cookie-copy p{margin:0;color:#bdbdc6;font-size:.78rem;line-height:1.55}
+.cookie-copy a{color:#fff}
+.cookie-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.cookie-actions button{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 15px;font:700 .72rem "DM Sans";cursor:pointer}
+.cookie-reject{background:transparent;color:#fff}
+.cookie-accept{border-color:transparent!important;background:linear-gradient(90deg,var(--pink),var(--violet));color:#fff}
+@media(max-width:700px){.cookie-banner{left:12px;right:12px;bottom:12px;grid-template-columns:1fr}.cookie-actions{justify-content:flex-start}}
+
+
+.footer-hours{
+  margin:18px 0 0;
+  color:#a9a9b2;
+  font-size:.82rem;
+  line-height:1.55;
+}
+.footer-hours strong{
+  color:#fff;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
 </style>
 
 <style>
@@ -1782,6 +1929,10 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
         Web
       </a>
 
+      <a href="#casos">
+        Portfolio
+      </a>
+
       <a href="#nosotros">
         Nosotros
       </a>
@@ -1817,6 +1968,10 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
 
       <a href="#web">
         Web
+      </a>
+
+      <a href="#casos">
+        Portfolio
       </a>
 
       <a href="#nosotros">
@@ -2347,7 +2502,7 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
       <article class="case-study nicole reveal">
         <div class="case-stage">
           <div class="browser"><img src="portfolio-premium/nicole-web-clean.webp" alt="Proyecto digital de Nicole Lee Uruguay" loading="lazy"></div>
-          <div class="art-card"><img src="portfolio-premium/nicole-campaign.webp" alt="Pieza de campaña de Nicole Lee Uruguay" loading="lazy"></div>
+          <div class="phone"><img src="portfolio-premium/nicole-campaign.webp" alt="Redes sociales de nicole" loading="lazy"></div>
         </div>
         <div class="case-info">
           <div class="case-meta"><span>Nicole Lee Uruguay</span><span>Desde 2020</span></div>
@@ -2362,7 +2517,7 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
       <article class="case-study rocco reveal">
         <div class="case-stage">
           <div class="browser"><img src="portfolio-premium/rocco-clean.webp" alt="Proyecto digital de Rocco Uruguay" loading="lazy"></div>
-          
+          <div class="phone"><img src="portfolio-premium/rocco-clean.webp" alt="Redes sociales de rocco" loading="lazy"></div>
         </div>
         <div class="case-info">
           <div class="case-meta"><span>Rocco Uruguay</span><span>Desde 2020</span></div>
@@ -2377,7 +2532,7 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
       <article class="case-study cemer reveal">
         <div class="case-stage">
           <div class="browser"><img src="portfolio-premium/cemer-clean.webp" alt="Proyecto digital de CEMER" loading="lazy"></div>
-          
+          <div class="phone"><img src="portfolio-premium/cemer-clean.webp" alt="Redes sociales de cemer" loading="lazy"></div>
         </div>
         <div class="case-info">
           <div class="case-meta"><span>CEMER</span><span>Desde 2021</span></div>
@@ -2392,7 +2547,7 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
       <article class="case-study brisas reveal">
         <div class="case-stage">
           <div class="browser"><img src="portfolio-premium/brisas-web-clean.webp" alt="Proyecto digital de Brisas de Malvín" loading="lazy"></div>
-          <div class="phone"><img src="portfolio-premium/brisas-social-clean.webp" alt="Redes sociales de Brisas de Malvín" loading="lazy"></div>
+          <div class="phone"><img src="portfolio-premium/brisas-social-clean.webp" alt="Redes sociales de brisas" loading="lazy"></div>
         </div>
         <div class="case-info">
           <div class="case-meta"><span>Brisas de Malvín</span><span>Desde 2025</span></div>
@@ -2407,7 +2562,7 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
       <article class="case-study emanuel reveal">
         <div class="case-stage">
           <div class="browser"><img src="portfolio-premium/emanuel-clean.webp" alt="Proyecto digital de Emanuel Viajes" loading="lazy"></div>
-          
+          <div class="phone"><img src="portfolio-premium/emanuel-redes.webp" alt="Redes sociales de emanuel" loading="lazy"></div>
         </div>
         <div class="case-info">
           <div class="case-meta"><span>Emanuel Viajes</span><span>Desde 2025</span></div>
@@ -2422,7 +2577,7 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
       <article class="case-study payasin reveal">
         <div class="case-stage">
           <div class="browser"><img src="portfolio-premium/payasin-web-clean.webp" alt="Proyecto digital de Juegos Payasín" loading="lazy"></div>
-          <div class="phone"><img src="portfolio-premium/payasin-social-clean.webp" alt="Redes sociales de Juegos Payasín" loading="lazy"></div>
+          <div class="phone"><img src="portfolio-premium/payasin-social-clean.webp" alt="Redes sociales de payasin" loading="lazy"></div>
         </div>
         <div class="case-info">
           <div class="case-meta"><span>Juegos Payasín</span><span>Desde 2022</span></div>
@@ -2523,6 +2678,45 @@ radial-gradient(circle at 88% 70%,rgba(109,37,255,.14),transparent 30%)}
 </section>
 
 <footer>
+
+<div class="wrap footer-top">
+  <div class="footer-intro">
+    <a class="brand" href="#inicio">CALEMAN<span>DESIGN</span></a>
+    <p>Estrategia, publicidad, contenido, diseño y tecnología para hacer crecer marcas y negocios.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navegación</h4>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#publicidad">Publicidad</a>
+    <a href="#web">Web</a>
+    <a href="#casos">Portfolio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Hablemos</a>
+  </div>
+  <div class="footer-col">
+    <h4>Legal</h4>
+    <a href="privacidad.html">Política de Privacidad</a>
+    <a href="cookies.html">Política de Cookies</a>
+  </div>
+
+  <div class="footer-col">
+    <h4>Contacto</h4>
+    <a href="mailto:info@calemandesign.com">info@calemandesign.com</a>
+    <a href="https://wa.me/59894424656" target="_blank" rel="noopener noreferrer">+598 94 424 656</a>
+    <a href="https://wa.me/59893585211" target="_blank" rel="noopener noreferrer">+598 93 585 211</a>
+    <p class="footer-hours"><strong>Horario de atención</strong><br>Lunes a Viernes de 10 a 18 hs (UY)</p>
+  </div>
+
+  <div class="footer-col footer-socials">
+    <h4>Seguinos</h4>
+    <a href="https://www.facebook.com/calemandesign" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+    <a href="https://www.instagram.com/calemandesign.ok/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    <a href="https://wa.me/59894424656" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+    <p class="footer-legal-note">CalemanDesign · Montevideo, Uruguay</p>
+  </div>
+</div>
+
 
   <div class="wrap">
 
@@ -2719,6 +2913,36 @@ menu
       });
     });
   });
+})();
+</script>
+
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Preferencias de cookies">
+  <div class="cookie-copy">
+    <strong>Tu privacidad importa.</strong>
+    <p>Usamos cookies necesarias para el funcionamiento del sitio. Las cookies de medición o publicidad solo se activarán con tu consentimiento. <a href="cookies.html">Ver Política de Cookies</a>.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-reject" id="cookieReject" type="button">Rechazar opcionales</button>
+    <button class="cookie-accept" id="cookieAccept" type="button">Aceptar</button>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  const banner=document.getElementById('cookieBanner');
+  if(!banner) return;
+  const key='calemandesign_cookie_consent';
+  const saved=localStorage.getItem(key);
+  if(!saved) banner.classList.add('show');
+  function save(value){
+    localStorage.setItem(key,value);
+    banner.classList.remove('show');
+    window.dispatchEvent(new CustomEvent('calemanConsent',{detail:value}));
+  }
+  document.getElementById('cookieAccept')?.addEventListener('click',()=>save('accepted'));
+  document.getElementById('cookieReject')?.addEventListener('click',()=>save('rejected'));
 })();
 </script>
 
