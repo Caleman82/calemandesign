@@ -1709,6 +1709,73 @@ body:before{
   .final-cta-message h3{font-size:1.35rem}
 }
 
+
+/* ===== CASOS / PORTFOLIO ===== */
+.cases{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(255,28,142,.11),transparent 28%),
+    radial-gradient(circle at 88% 72%,rgba(109,37,255,.13),transparent 30%),
+    #070708;
+}
+.cases:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 84%,transparent);
+}
+.cases-head{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:end;margin-bottom:54px}
+.cases-head p{max-width:560px;margin:0 0 6px auto}
+.cases-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.case-card{
+  position:relative;min-height:560px;border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;overflow:hidden;background:#0d0d11;
+  box-shadow:0 22px 70px rgba(0,0,0,.22);
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.case-card:hover{transform:translateY(-6px);border-color:rgba(255,28,142,.38);box-shadow:0 28px 90px rgba(0,0,0,.36)}
+.case-card.featured{grid-column:span 7}
+.case-card.medium{grid-column:span 5}
+.case-card.half{grid-column:span 6;min-height:520px}
+.case-visual{height:310px;position:relative;overflow:hidden;background:linear-gradient(135deg,#181820,#0b0b0f)}
+.case-card.featured .case-visual{height:340px}
+.case-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.case-card:hover .case-visual img{transform:scale(1.025)}
+.case-visual.phone-shot img{object-fit:cover;object-position:top}
+.case-visual.duo{display:grid;grid-template-columns:1.2fr .8fr;gap:2px}
+.case-visual.duo img{min-width:0}
+.case-visual:after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(to top,rgba(13,13,17,.96),transparent);pointer-events:none}
+.case-number{position:absolute;top:18px;left:18px;z-index:2;font:800 .72rem/1 "Montserrat";letter-spacing:.08em;padding:9px 11px;border-radius:999px;background:rgba(5,5,5,.72);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px)}
+.case-content{padding:26px 28px 28px}
+.case-kicker{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:12px;color:var(--soft);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.case-content h3{font-family:"Montserrat";font-size:clamp(1.45rem,2.1vw,2.15rem);line-height:1;letter-spacing:-.045em;margin:0 0 14px}
+.case-content p{font-size:.96rem;line-height:1.65;margin:0;color:#c8c8d0}
+.case-result{display:flex;align-items:baseline;gap:10px;margin:18px 0 16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.10)}
+.case-result strong{font-family:"Montserrat";font-size:clamp(1.45rem,2.4vw,2.35rem);line-height:1;color:var(--yellow);letter-spacing:-.05em}
+.case-result span{font-size:.78rem;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.case-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+.case-tags span{padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.13);font-size:.7rem;font-weight:700;color:#e8e8ed;background:rgba(255,255,255,.035)}
+.case-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:#fff;text-decoration:none;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.case-link:after{content:"↗";color:var(--pink);font-size:1rem;transition:transform .2s ease}
+.case-link:hover:after{transform:translate(3px,-3px)}
+.case-card.nicole .case-result strong{color:var(--pink2)}
+.case-card.rocco .case-result strong{color:var(--lilac)}
+.case-card.payasin .case-result strong{color:var(--yellow)}
+@media(max-width:950px){
+  .cases-head{grid-template-columns:1fr;gap:18px}.cases-head p{margin:0}
+  .case-card.featured,.case-card.medium,.case-card.half{grid-column:span 12}
+  .case-card{min-height:0}.case-visual,.case-card.featured .case-visual{height:330px}
+}
+@media(max-width:650px){
+  .cases-grid{gap:16px}.case-card{border-radius:22px}
+  .case-visual,.case-card.featured .case-visual{height:270px}
+  .case-content{padding:22px 20px 24px}.case-content p{font-size:.91rem}
+  .case-result{align-items:flex-end}.case-result strong{font-size:1.7rem}
+  .case-visual.duo{grid-template-columns:1fr 1fr}
+}
+
 </style>
 
 <style>
@@ -2297,6 +2364,114 @@ body:before{
 
 </section>
 
+
+
+
+<!-- CASOS / PORTFOLIO -->
+<section class="section cases" id="casos">
+  <div class="wrap">
+    <div class="cases-head reveal">
+      <div>
+        <div class="eyebrow">Casos reales</div>
+        <h2>CASOS QUE HABLAN<br><span class="gradient-text">POR NOSOTROS.</span></h2>
+      </div>
+      <p>No mostramos promesas. Mostramos trabajo: estrategia, diseño, publicidad y tecnología aplicados a negocios reales.</p>
+    </div>
+
+    <div class="cases-grid">
+      <article class="case-card featured nicole reveal">
+        <div class="case-visual duo">
+          <img src="portfolio/nicole-campana.webp" alt="Campaña creada para Nicole Lee Uruguay" loading="lazy">
+          <img src="portfolio/nicole-web.webp" alt="Tienda online de Nicole Lee Uruguay" loading="lazy">
+          <span class="case-number">01</span>
+        </div>
+        <div class="case-content">
+          <div class="case-kicker"><span>Nicole Lee Uruguay</span><span>Desde 2020</span></div>
+          <h3>ESTRATEGIA QUE SE CONVIERTE EN VENTAS.</h3>
+          <p>Gestión de redes sociales y desarrollo de su tienda online, integrando contenido, e-commerce y campañas publicitarias.</p>
+          <div class="case-result"><strong>ROAS +14</strong><span>alcanzado en campañas</span></div>
+          <div class="case-tags"><span>Redes</span><span>E-commerce</span><span>Meta Ads</span><span>Estrategia</span></div>
+          <a class="case-link" href="https://www.nicoleleeuruguay.com" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </article>
+
+      <article class="case-card medium rocco reveal">
+        <div class="case-visual phone-shot">
+          <img src="portfolio/rocco.webp" alt="Landing de Rocco Uruguay" loading="lazy">
+          <span class="case-number">02</span>
+        </div>
+        <div class="case-content">
+          <div class="case-kicker"><span>Rocco Uruguay</span><span>Desde 2020</span></div>
+          <h3>DE COMUNIDAD A ECOSISTEMA COMERCIAL.</h3>
+          <p>Redes sociales, líneas de WhatsApp, CRM y landing trabajando como un único sistema comercial.</p>
+          <div class="case-result"><strong>&lt;2K → +34K</strong><span>seguidores</span></div>
+          <div class="case-tags"><span>Redes</span><span>CRM</span><span>WhatsApp</span><span>Landing</span></div>
+          <a class="case-link" href="https://www.roccouruguay.com" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </article>
+
+      <article class="case-card half reveal">
+        <div class="case-visual phone-shot">
+          <img src="portfolio/cemer.webp" alt="Sitio web de CEMER Medicina Regenerativa" loading="lazy">
+          <span class="case-number">03</span>
+        </div>
+        <div class="case-content">
+          <div class="case-kicker"><span>CEMER</span><span>Desde 2021</span></div>
+          <h3>UNA PRESENCIA DIGITAL INTEGRAL.</h3>
+          <p>Gestión de redes sociales, desarrollo web y gestión de agenda para acompañar el crecimiento digital de la clínica.</p>
+          <div class="case-result"><strong>2021 → HOY</strong><span>trabajo sostenido</span></div>
+          <div class="case-tags"><span>Redes</span><span>Web</span><span>Agenda</span><span>Estrategia</span></div>
+          <a class="case-link" href="https://www.cemer.com.uy" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </article>
+
+      <article class="case-card half reveal">
+        <div class="case-visual duo">
+          <img src="portfolio/brisas-web.webp" alt="Sitio web de Brisas de Malvín" loading="lazy">
+          <img src="portfolio/brisas-social.webp" alt="Redes sociales de Brisas de Malvín" loading="lazy">
+          <span class="case-number">04</span>
+        </div>
+        <div class="case-content">
+          <div class="case-kicker"><span>Brisas de Malvín</span><span>Desde 2025</span></div>
+          <h3>CONSTRUIR PRESENCIA DESDE CERO.</h3>
+          <p>Desarrollo web y campañas de Google Ads y Meta Ads para un residencial nuevo que necesitaba visibilidad y oportunidades comerciales.</p>
+          <div class="case-tags"><span>Web</span><span>Google Ads</span><span>Meta Ads</span><span>Estrategia</span></div>
+          <a class="case-link" href="https://www.brisasdemalvin.com" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </article>
+
+      <article class="case-card medium reveal">
+        <div class="case-visual phone-shot">
+          <img src="portfolio/emanuel.webp" alt="Landing de Emanuel Viajes" loading="lazy">
+          <span class="case-number">05</span>
+        </div>
+        <div class="case-content">
+          <div class="case-kicker"><span>Emanuel Viajes</span><span>Desde 2025</span></div>
+          <h3>DE LA PROPUESTA AL VIAJE.</h3>
+          <p>Gestión de redes y desarrollo de landing para comunicar y comercializar sus propuestas de viaje de forma clara y directa.</p>
+          <div class="case-tags"><span>Redes</span><span>Landing</span><span>Contenido</span><span>Estrategia</span></div>
+          <a class="case-link" href="https://www.emanuelviajes.com" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </article>
+
+      <article class="case-card featured payasin reveal">
+        <div class="case-visual duo">
+          <img src="portfolio/payasin-web.webp" alt="Landing de Juegos Payasín" loading="lazy">
+          <img src="portfolio/payasin-social.webp" alt="Redes sociales de Juegos Payasín" loading="lazy">
+          <span class="case-number">06</span>
+        </div>
+        <div class="case-content">
+          <div class="case-kicker"><span>Juegos Payasín</span><span>Desde 2022</span></div>
+          <h3>UNA ZAFRA QUE SE PLANIFICA PARA VENDER.</h3>
+          <p>Gestión de redes y landing especial para el Día del Niño, una de las fechas comerciales más importantes del rubro.</p>
+          <div class="case-result"><strong>AGENDA LLENA</strong><span>en la zafra año tras año</span></div>
+          <div class="case-tags"><span>Redes</span><span>Landing</span><span>Campañas</span><span>Contenido</span></div>
+          <a class="case-link" href="https://www.payasin.com.uy" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 
 <!-- MARCAS / CLIENTES -->
