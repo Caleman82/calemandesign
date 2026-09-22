@@ -698,13 +698,22 @@
 
     .footer-word{
       font-family:"Montserrat",sans-serif;
-      font-size:clamp(55px,11vw,160px);
-      font-weight:900;
-      letter-spacing:-8px;
-      line-height:.8;
-      background:linear-gradient(90deg,var(--pink),var(--violet),var(--yellow));
-      -webkit-background-clip:text;
-      color:transparent;
+  font-size:clamp(42px,9.5vw,145px);
+  font-weight:900;
+  letter-spacing:-0.055em;
+  line-height:1;
+  background:linear-gradient(
+    90deg,
+    var(--pink),
+    var(--violet),
+    var(--yellow)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  width:100%;
+  white-space:nowrap;
+  overflow:visible;
     }
 
     .footer-bottom{
@@ -837,7 +846,9 @@
       }
 
       .footer-word{
-        letter-spacing:-4px;
+        l font-size:clamp(35px,11.5vw,60px);
+  letter-spacing:-0.06em;
+  white-space:nowrap;
       }
     }
 
