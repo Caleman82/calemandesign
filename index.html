@@ -4,9 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="CalemanDesign — Agencia de marketing digital, publicidad, diseño web y estrategia en Montevideo, Uruguay.">
+  <!-- SEO PRINCIPAL -->
+  <title>Agencia de Marketing Digital en Uruguay | CalemanDesign</title>
+  <meta name="description" content="Agencia de marketing digital en Uruguay. Meta Ads, Google Ads, diseño web, redes sociales, contenido, branding y estrategia para hacer crecer tu negocio.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="CalemanDesign">
+  <meta name="theme-color" content="#050505">
+  <link rel="canonical" href="https://www.calemandesign.com/">
 
-  <title>CalemanDesign | Marketing Digital, Publicidad y Diseño Web</title>
+  <!-- OPEN GRAPH / WHATSAPP / FACEBOOK / LINKEDIN -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="CalemanDesign">
+  <meta property="og:title" content="CalemanDesign | Agencia de Marketing Digital">
+  <meta property="og:description" content="Estrategia, publicidad, contenido, diseño y tecnología para transformar presencia digital en oportunidades reales de negocio.">
+  <meta property="og:url" content="https://www.calemandesign.com/">
+  <meta property="og:image" content="https://www.calemandesign.com/logo-neon.png">
+  <meta property="og:image:alt" content="CalemanDesign — Agencia de Marketing Digital">
+
+  <!-- X / TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CalemanDesign | Agencia de Marketing Digital">
+  <meta name="twitter:description" content="Meta Ads, Google Ads, diseño web, redes sociales, contenido, branding y estrategia digital.">
+  <meta name="twitter:image" content="https://www.calemandesign.com/logo-neon.png">
+
+  <!-- DATOS ESTRUCTURADOS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.calemandesign.com/#organization",
+    "name": "CalemanDesign",
+    "alternateName": "Caleman Design",
+    "url": "https://www.calemandesign.com/",
+    "logo": "https://www.calemandesign.com/logo-neon.png",
+    "email": "info@calemandesign.com",
+    "telephone": "+59894424656",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Uruguay"
+    },
+    "sameAs": [
+      "https://www.facebook.com/calemandesign",
+      "https://www.instagram.com/calemandesign.ok/"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+59894424656",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+59893585211",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3068,6 +3125,29 @@ menu
   document.getElementById('cookieAccept')?.addEventListener('click',()=>save('accepted'));
   document.getElementById('cookieReject')?.addEventListener('click',()=>save('rejected'));
 })();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonialVideos = document.querySelectorAll(".video-testimonials video");
+
+  testimonialVideos.forEach((video) => {
+    video.setAttribute("preload", "metadata");
+    video.setAttribute("playsinline", "");
+
+    const revealFirstFrame = () => {
+      try {
+        if (video.currentTime === 0 && video.duration && isFinite(video.duration)) {
+          video.currentTime = Math.min(0.12, video.duration / 20);
+        }
+      } catch (e) {}
+    };
+
+    video.addEventListener("loadedmetadata", revealFirstFrame, { once: true });
+    video.addEventListener("seeked", () => video.pause(), { once: true });
+  });
+});
 </script>
 
 </body>
