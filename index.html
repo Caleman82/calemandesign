@@ -566,7 +566,7 @@ p{
 .pricing{
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
 
   gap:18px;
 
@@ -1188,6 +1188,27 @@ footer{
 
 }
 
+/* WEBS A MEDIDA */
+.web-custom-note{margin-top:38px;padding:28px 30px;border:1px solid #ddd6e1;border-radius:24px;background:linear-gradient(135deg,#fff 0%,#faf6ff 100%);display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center}
+.web-custom-note strong{font-family:"Montserrat";font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;letter-spacing:-.045em;line-height:1}
+.web-custom-note p{margin:0;color:#514b55}
+
+/* CLIENTES / MARCAS */
+.clients{background:#08080a;overflow:hidden;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.clients-head{text-align:center;margin-bottom:54px}
+.clients-head h2{max-width:900px;margin:10px auto 0}
+.clients-head p{max-width:720px;margin:22px auto 0}
+.logo-marquee{width:100%;overflow:hidden;position:relative;padding:8px 0;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.logo-marquee+.logo-marquee{margin-top:20px}.logo-track{display:flex;width:max-content;will-change:transform;animation:logos-left 46s linear infinite}.logo-marquee.reverse .logo-track{animation-name:logos-right;animation-duration:52s}.logo-set{display:flex;align-items:center;gap:22px;padding-right:22px}.logo-item{width:190px;height:118px;flex:0 0 190px;display:flex;align-items:center;justify-content:center;padding:14px;border:1px solid rgba(255,255,255,.10);border-radius:20px;background:#fff;overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.logo-item:hover{transform:scale(1.045);border-color:rgba(255,28,142,.5);box-shadow:0 0 28px rgba(255,28,142,.12)}.logo-item img{display:block;width:100%;height:100%;object-fit:contain}.logo-item.dark{background:#0b0b0d}.logo-item.soft{background:#f4f4f4}@keyframes logos-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes logos-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}.logo-marquee:hover .logo-track{animation-play-state:paused}
+
+/* TESTIMONIOS EN VIDEO */
+.video-testimonials{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.video-card{border:1px solid var(--line);border-radius:26px;background:#0d0d10;overflow:hidden;padding:12px}.video-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#050505;border-radius:18px}.video-card-meta{padding:18px 8px 10px}.video-card-meta strong{display:block;font-family:"Montserrat";font-size:1.05rem}.video-card-meta span{display:block;margin-top:6px;color:var(--lilac);font-size:.9rem;font-weight:700}
+
+</style>
+
+<style>
+@media(max-width:950px){.web-custom-note{grid-template-columns:1fr}.video-testimonials{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.web-custom-note{padding:22px}.video-testimonials{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.video-card{min-width:82vw;scroll-snap-align:start}.logo-set{gap:14px;padding-right:14px}.logo-item{width:150px;height:96px;flex-basis:150px;padding:11px;border-radius:16px}.logo-marquee+.logo-marquee{margin-top:14px}.logo-track{animation-duration:38s}.logo-marquee.reverse .logo-track{animation-duration:43s}}
 </style>
 </head>
 
@@ -1616,205 +1637,24 @@ footer{
 
 
 <!-- WEB -->
-
-<section
-  class="section web"
-  id="web"
->
-
+<section class="section web" id="web">
   <div class="wrap">
-
-    <div class="eyebrow reveal">
-      Desarrollo web
+    <div class="eyebrow reveal">Desarrollo web</div>
+    <h2 class="reveal">DE IDEA A ONLINE.<br>SIN COMPLICACIONES.</h2>
+    <p class="reveal">Tu negocio no es igual al de todos. Tu web tampoco debería serlo. Diseñamos cada sitio a medida de la identidad, los objetivos y las necesidades de cada marca.</p>
+    <div class="web-custom-note reveal">
+      <strong>NO HACEMOS WEBS EN SERIE.</strong>
+      <p>No trabajamos sobre una estructura genérica donde simplemente cambiamos el logo, los colores y los textos. Cada proyecto tiene su propia propuesta visual, estructura y experiencia.</p>
     </div>
-
-    <h2 class="reveal">
-      DE IDEA A ONLINE.
-      <br>
-      SIN COMPLICACIONES.
-    </h2>
-
-    <p class="reveal">
-      Opciones claras para negocios que
-      necesitan una presencia profesional,
-      rápida y adaptable a cualquier dispositivo.
-    </p>
-
-
     <div class="pricing">
-
-
-      <article class="price-card reveal">
-
-        <div class="eyebrow">
-          Web Start
-        </div>
-
-        <h3>
-          One Page
-        </h3>
-
-        <div class="price">
-          USD 200
-        </div>
-
-        <ul class="features">
-
-          <li>
-            Una página completa
-          </li>
-
-          <li>
-            Diseño responsive
-          </li>
-
-          <li>
-            Botón de WhatsApp
-          </li>
-
-          <li>
-            Formulario de contacto
-          </li>
-
-          <li>
-            SEO básico
-          </li>
-
-          <li>
-            Hosting incluido
-          </li>
-
-        </ul>
-
-        <a
-          href="#contacto"
-          class="btn"
-        >
-          QUIERO MI WEB
-        </a>
-
-      </article>
-
-
-      <article class="price-card featured reveal">
-
-        <div class="eyebrow">
-          Web Business
-        </div>
-
-        <h3>
-          Hasta 5 páginas
-        </h3>
-
-        <div class="price">
-          USD 400
-        </div>
-
-        <ul class="features">
-
-          <li>
-            Hasta 5 páginas
-          </li>
-
-          <li>
-            Diseño responsive
-          </li>
-
-          <li>
-            WhatsApp + contacto
-          </li>
-
-          <li>
-            Estructura profesional
-          </li>
-
-          <li>
-            SEO básico
-          </li>
-
-          <li>
-            Hosting incluido
-          </li>
-
-        </ul>
-
-        <a
-          href="#contacto"
-          class="btn btn-primary"
-        >
-          QUIERO MI WEB
-        </a>
-
-      </article>
-
-
-      <article class="price-card reveal">
-
-        <div class="eyebrow">
-          Web Custom
-        </div>
-
-        <h3>
-          Proyecto a medida
-        </h3>
-
-        <div class="price">
-          A cotizar
-        </div>
-
-        <ul class="features">
-
-          <li>
-            Necesidades especiales
-          </li>
-
-          <li>
-            Estructura personalizada
-          </li>
-
-          <li>
-            Integraciones
-          </li>
-
-          <li>
-            Funciones a medida
-          </li>
-
-          <li>
-            Escalabilidad
-          </li>
-
-          <li>
-            Presupuesto personalizado
-          </li>
-
-        </ul>
-
-        <a
-          href="#contacto"
-          class="btn"
-        >
-          CONTANOS TU IDEA
-        </a>
-
-      </article>
-
+      <article class="price-card reveal"><div class="eyebrow">Landing Page</div><h3>Una campaña. Un objetivo.</h3><div class="price"><small>Desde</small> USD 200</div><ul class="features"><li>Página enfocada en conversión</li><li>Producto, servicio o campaña</li><li>Diseño responsive</li><li>WhatsApp o formulario</li><li>SEO básico</li><li>Hosting incluido</li></ul><a href="#contacto" class="btn">QUIERO MI LANDING</a></article>
+      <article class="price-card featured reveal"><div class="eyebrow">One Page</div><h3>Tu empresa en una sola web</h3><div class="price"><small>Desde</small> USD 300</div><ul class="features"><li>Sitio institucional completo</li><li>Secciones personalizadas</li><li>Diseño responsive</li><li>WhatsApp + contacto</li><li>SEO básico</li><li>Hosting incluido</li></ul><a href="#contacto" class="btn btn-primary">QUIERO MI WEB</a></article>
+      <article class="price-card reveal"><div class="eyebrow">Web Business</div><h3>Hasta 5 páginas</h3><div class="price"><small>Desde</small> USD 500</div><ul class="features"><li>Hasta 5 páginas independientes</li><li>Diseño a medida</li><li>Diseño responsive</li><li>WhatsApp + contacto</li><li>SEO básico</li><li>Hosting incluido</li></ul><a href="#contacto" class="btn">QUIERO MI WEB</a></article>
+      <article class="price-card reveal"><div class="eyebrow">Web Custom</div><h3>Proyecto a medida</h3><div class="price">A cotizar</div><ul class="features"><li>Necesidades especiales</li><li>Estructura personalizada</li><li>Integraciones</li><li>Funciones a medida</li><li>Escalabilidad</li><li>Presupuesto personalizado</li></ul><a href="#contacto" class="btn">CONTANOS TU IDEA</a></article>
     </div>
-
-
-    <p class="note">
-
-      Dominio no incluido.
-      Hosting incluido.
-      Sin mensualidades obligatorias.
-      Mantenimiento disponible de forma opcional.
-
-    </p>
-
+    <p class="note">Dominio no incluido. Hosting incluido. Sin mensualidades obligatorias. Mantenimiento disponible de forma opcional.</p>
   </div>
-
 </section>
-
 
 <!-- PROCESO -->
 
@@ -1952,83 +1792,26 @@ footer{
 </section>
 
 
-<!-- TESTIMONIOS -->
 
-<section class="section">
-
-  <div class="wrap">
-
-    <div class="eyebrow reveal">
-      Experiencias reales
-    </div>
-
-    <h2 class="reveal">
-
-      NUESTRO TRABAJO HABLA.
-      <br>
-
-      <span class="gradient-text">
-        NUESTROS CLIENTES TAMBIÉN.
-      </span>
-
-    </h2>
-
-
-    <div class="testimonials-grid">
-
-
-      <article class="quote reveal">
-
-        <p>
-          Próximamente incorporaremos aquí
-          testimonios reales de clientes
-          de CalemanDesign.
-        </p>
-
-        <small>
-          CalemanDesign
-        </small>
-
-      </article>
-
-
-      <article class="quote reveal">
-
-        <p>
-          Esta sección está preparada
-          para sumar experiencias verificadas
-          sin utilizar textos genéricos
-          o inventados.
-        </p>
-
-        <small>
-          Testimonios reales
-        </small>
-
-      </article>
-
-
-      <article class="quote reveal">
-
-        <p>
-          También podremos vincular
-          cada experiencia con trabajos
-          reales del portfolio.
-        </p>
-
-        <small>
-          Portfolio + resultados
-        </small>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
+<!-- MARCAS / CLIENTES -->
+<section class="section clients" id="clientes">
+  <div class="clients-head wrap reveal"><div class="eyebrow">Clientes</div><h2>MARCAS QUE CONFÍAN <span class="gradient-text">EN NOSOTROS.</span></h2><p>Más de 20 años trabajando junto a empresas, profesionales y emprendimientos.</p></div>
+  <div class="logo-marquee "><div class="logo-track"><div class="logo-set"><div class="logo-item"><img src="logos/logo%20cemer.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20payasin.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20auto%20zenith.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20gamberoni.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/LOGO%20TRAILER%20PNG.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20american.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20brillo%20natural.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20calero%20pro.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20alberto%20casa.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20dolce%20agostina.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20tienda%20fashion.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20fusion%20pilates.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20ganesha%20spa.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20zona%20libre.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20rocco%20uruguay.png" alt="Logo cliente" loading="lazy"></div></div><div class="logo-set" aria-hidden="true"><div class="logo-item"><img src="logos/logo%20cemer.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20payasin.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20auto%20zenith.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20gamberoni.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/LOGO%20TRAILER%20PNG.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20american.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20brillo%20natural.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20calero%20pro.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20alberto%20casa.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20dolce%20agostina.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20tienda%20fashion.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20fusion%20pilates.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20ganesha%20spa.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20zona%20libre.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20rocco%20uruguay.png" alt="Logo cliente" loading="lazy"></div></div></div></div><div class="logo-marquee reverse"><div class="logo-track"><div class="logo-set"><div class="logo-item"><img src="logos/logo%20emanuel.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20encantada.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20brisas.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20lumin%20uy.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20kosounian.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20peluqueria%20ey.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20nina%20moda.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20narancio.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20nicole%20lee%20uru.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20la%20galeria.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20diversalma.jfif" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20doctor%20and%20nurse.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20huerto.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20ingles%20con%20nati.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20andrea%20manera.png" alt="Logo cliente" loading="lazy"></div></div><div class="logo-set" aria-hidden="true"><div class="logo-item"><img src="logos/logo%20emanuel.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20encantada.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20brisas.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20lumin%20uy.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20kosounian.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20peluqueria%20ey.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20nina%20moda.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20narancio.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20nicole%20lee%20uru.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20la%20galeria.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20diversalma.jfif" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20doctor%20and%20nurse.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20huerto.png" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20ingles%20con%20nati.jpg" alt="Logo cliente" loading="lazy"></div><div class="logo-item"><img src="logos/logo%20andrea%20manera.png" alt="Logo cliente" loading="lazy"></div></div></div></div>
 </section>
 
+<!-- TESTIMONIOS -->
+<section class="section" id="testimonios">
+  <div class="wrap">
+    <div class="eyebrow reveal">Experiencias reales</div>
+    <h2 class="reveal">ELLOS TRABAJARON CON NOSOTROS.<br><span class="gradient-text">Y ESTO ES LO QUE TIENEN PARA CONTAR.</span></h2>
+    <p class="reveal">Experiencias reales de clientes que confiaron en CalemanDesign.</p>
+    <div class="video-testimonials">
+      <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-01.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Testimonio real</strong><span>Cliente CalemanDesign</span></div></article>
+      <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-02.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Testimonio real</strong><span>Cliente CalemanDesign</span></div></article>
+      <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-03.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Testimonio real</strong><span>Cliente CalemanDesign</span></div></article>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACTO -->
 
