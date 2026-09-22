@@ -1984,6 +1984,99 @@ section h2 .gradient-text,
   .big-number{font-size:32vw!important}
 }
 
+
+/* ===== FIX DEFINITIVO EXPERIENCIA EN CELULAR ===== */
+@media (max-width:650px){
+  .experience{
+    overflow:hidden!important;
+  }
+  .experience .wrap.exp-grid{
+    width:100%!important;
+    max-width:100%!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:26px!important;
+  }
+  .experience-copy{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow:visible!important;
+  }
+  .experience-copy h2{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0 .06em .08em 0!important;
+    font-size:clamp(1.72rem,8.6vw,2.65rem)!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-wrap:initial!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+  }
+  .experience-copy h2 span{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+  }
+  .experience-copy p{
+    width:100%!important;
+    max-width:100%!important;
+    margin-top:20px!important;
+  }
+}
+@media (max-width:390px){
+  .experience .wrap.exp-grid{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  .experience-copy h2{
+    font-size:8.15vw!important;
+    letter-spacing:-.04em!important;
+  }
+}
+
+
+/* ===== INDICADOR DE DESLIZAMIENTO TESTIMONIOS ===== */
+.testimonial-swipe-cue{display:none}
+@media(max-width:650px){
+  .testimonial-swipe-cue{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    margin:28px 2px 8px;
+    color:#bdbdc6;
+    font-size:.76rem;
+    font-weight:700;
+    letter-spacing:.03em;
+  }
+  .testimonial-swipe-cue .swipe-arrows{
+    color:var(--lilac);
+    font-size:1.2rem;
+    letter-spacing:0;
+    animation:swipeHint 1.7s ease-in-out infinite;
+  }
+  .video-testimonials{
+    margin-top:10px!important;
+    padding-right:12vw!important;
+    scrollbar-width:none;
+  }
+  .video-testimonials::-webkit-scrollbar{display:none}
+  .video-card{min-width:80vw!important}
+  @keyframes swipeHint{
+    0%,100%{transform:translateX(0);opacity:.7}
+    50%{transform:translateX(6px);opacity:1}
+  }
+}
+
 </style>
 
 <style>
@@ -2554,16 +2647,16 @@ section h2 .gradient-text,
     </div>
 
 
-    <div>
+    <div class="experience-copy">
 
       <div class="eyebrow">
         Experiencia
       </div>
 
       <h2>
-        AÑOS CREANDO,
-        DISEÑANDO Y
-        EVOLUCIONANDO.
+        <span>AÑOS CREANDO,</span>
+        <span>DISEÑANDO Y</span>
+        <span>EVOLUCIONANDO.</span>
       </h2>
 
       <p>
@@ -2697,6 +2790,10 @@ section h2 .gradient-text,
     <div class="eyebrow reveal">Experiencias reales</div>
     <h2 class="reveal">ELLOS TRABAJARON CON NOSOTROS.<br><span class="gradient-text">Y ESTO ES LO QUE TIENEN PARA CONTAR.</span></h2>
     <p class="reveal">Experiencias reales de clientes que confiaron en CalemanDesign.</p>
+    <div class="testimonial-swipe-cue" aria-hidden="true">
+      <span>Deslizá para ver más</span>
+      <span class="swipe-arrows">← &nbsp; →</span>
+    </div>
     <div class="video-testimonials">
       <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-01.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Dolce Agostina</strong><span>Verónica Menchaca</span></div></article>
       <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-02.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Brisas de Malvín</strong><span>Ana Gabriela Cordone</span></div></article>
