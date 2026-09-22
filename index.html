@@ -1891,6 +1891,99 @@ section h2 .gradient-text,
   text-transform:uppercase;
 }
 
+
+/* ===== MOBILE RESPONSIVE FINAL ===== */
+@media (max-width:650px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .wrap{width:100%;max-width:100%;padding-left:20px;padding-right:20px}
+  section,.section,.hero,.experience,.web-section{overflow:visible}
+
+  /* Titles: never clip long words/remates */
+  .hero h1,
+  section h2,
+  .web-section h2,
+  .experience h2,
+  .contact-box h2{
+    width:100%;
+    max-width:100%;
+    overflow:visible;
+    overflow-wrap:break-word;
+    word-break:normal;
+    hyphens:none;
+    text-wrap:balance;
+    padding-right:.18em;
+  }
+  .web-section h2,
+  #web h2{
+    font-size:clamp(2.15rem,11.2vw,3.25rem);
+    line-height:.96;
+    letter-spacing:-.055em;
+  }
+
+  /* Web plans: one centered card per row, no crop */
+  .pricing-grid,
+  .web-grid,
+  .plans-grid{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    max-width:100%!important;
+    gap:18px!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    transform:none!important;
+  }
+  .price-card,
+  .web-card,
+  .plan-card{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    transform:none!important;
+  }
+
+  /* 20+ years: stack cleanly and keep everything inside viewport */
+  .experience{overflow:hidden}
+  .experience .wrap{overflow:visible}
+  .exp-grid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    width:100%!important;
+    max-width:100%!important;
+    align-items:start!important;
+  }
+  .big-number{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(6rem,34vw,9rem)!important;
+    line-height:.82!important;
+    letter-spacing:-.075em!important;
+    overflow:visible;
+    white-space:nowrap;
+    margin:0;
+  }
+  .experience .eyebrow{top:0!important;margin-bottom:18px}
+  .experience h2{
+    font-size:clamp(2.25rem,11.5vw,3.35rem)!important;
+    line-height:.96!important;
+    letter-spacing:-.055em!important;
+    margin-top:0!important;
+  }
+  .experience p{max-width:100%!important}
+
+  /* Case studies */
+  .case-study{grid-template-columns:1fr!important;min-width:0}
+  .case-stage,.case-info{min-width:0;width:100%}
+}
+
+@media (max-width:390px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .web-section h2,#web h2,.experience h2{font-size:clamp(2rem,10.8vw,2.75rem)!important}
+  .big-number{font-size:32vw!important}
+}
+
 </style>
 
 <style>
