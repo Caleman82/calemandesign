@@ -68,7 +68,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="logo-neon.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet"></noscript>
 
 <style>
 
@@ -2292,9 +2294,13 @@ section h2 .gradient-text,
     >
 
       <img
-        src="logo-neon.png"
+        src="logo-neon.webp"
         alt=""
         class="hero-logo"
+        fetchpriority="high"
+        decoding="async"
+        width="1536"
+        height="1024"
       >
 
     </div>
@@ -2852,9 +2858,9 @@ section h2 .gradient-text,
       <span class="swipe-arrows">← &nbsp; →</span>
     </div>
     <div class="video-testimonials">
-      <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-01.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Dolce Agostina</strong><span>Verónica Menchaca</span></div></article>
-      <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-02.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Brisas de Malvín</strong><span>Ana Gabriela Cordone</span></div></article>
-      <article class="video-card reveal"><video controls playsinline preload="metadata"><source src="videos/testimonio-03.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Juegos Payasín</strong><span>Eloisa Perez</span></div></article>
+      <article class="video-card reveal"><video controls playsinline preload="none" poster="videos/testimonio-01-poster.webp"><source src="videos/testimonio-01.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Dolce Agostina</strong><span>Verónica Menchaca</span></div></article>
+      <article class="video-card reveal"><video controls playsinline preload="none" poster="videos/testimonio-02-poster.webp"><source src="videos/testimonio-02.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Brisas de Malvín</strong><span>Ana Gabriela Cordone</span></div></article>
+      <article class="video-card reveal"><video controls playsinline preload="none" poster="videos/testimonio-03-poster.webp"><source src="videos/testimonio-03.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><div class="video-card-meta"><strong>Juegos Payasín</strong><span>Eloisa Perez</span></div></article>
     </div>
   </div>
 </section>
@@ -3128,27 +3134,7 @@ menu
 </script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const testimonialVideos = document.querySelectorAll(".video-testimonials video");
 
-  testimonialVideos.forEach((video) => {
-    video.setAttribute("preload", "metadata");
-    video.setAttribute("playsinline", "");
-
-    const revealFirstFrame = () => {
-      try {
-        if (video.currentTime === 0 && video.duration && isFinite(video.duration)) {
-          video.currentTime = Math.min(0.12, video.duration / 20);
-        }
-      } catch (e) {}
-    };
-
-    video.addEventListener("loadedmetadata", revealFirstFrame, { once: true });
-    video.addEventListener("seeked", () => video.pause(), { once: true });
-  });
-});
-</script>
 
 </body>
 </html>
